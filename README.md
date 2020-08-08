@@ -45,7 +45,7 @@ Pipeline options:
 
   * __plugins:__ Gathers all of the specific configurations for the tasks used in the pipeline.
 
-      * __plugins.cleanCss:__ Minifies CSS files using the basic [clean-css](https://github.com/jakubpawlowicz/clean-css#what-is-clean-css) configuration. You can provide your own minification rules setting an object-- following [this](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) rules.
+      * __plugins.cleanCss:__ Minifies CSS files using the basic [clean-css](https://github.com/jakubpawlowicz/clean-css#what-is-clean-css) configuration. You can provide your own minification rules setting an object-- following [these](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) rules.
 
   Default:
   ```javascript
