@@ -34,7 +34,10 @@ gulp.task('default', function() {
 Pipeline options:
 * _config_ -> Object that contains the configuration.
 
-  * __addSourceMaps:__ If set to __false__ source maps won't be generated for the compile files. By default the pipeline will generate the source maps and store them in _maps_.
+  * __addSourceMaps:__ 
+      * If set to __false__ source maps won't be generated for the compile files.
+      * If set to an object containing a __prefix__ key with a fully qualified domain name value (e.g. a CDN URL with `https`), the sourceMap URL will be set with the specified prefix.
+      * By default the pipeline will generate the source maps and store them in _maps_.
 
   * __concat:__ If set to __false__ the pipeline won't concatenate the files to generate a single CSS file.
     
@@ -42,14 +45,14 @@ Pipeline options:
 
   * __plugins:__ Gathers all of the specific configurations for the tasks used in the pipeline.
 
-    * __plugins.cleanCss:__ Minifies CSS files using the basic [clean-css](https://github.com/jakubpawlowicz/clean-css#what-is-clean-css) configuration. You can provide your own minification rules setting an object-- following [this](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) rules.
+      * __plugins.cleanCss:__ Minifies CSS files using the basic [clean-css](https://github.com/jakubpawlowicz/clean-css#what-is-clean-css) configuration. You can provide your own minification rules setting an object-- following [this](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) rules.
 
   * __output:__ Where to
 
   Default:
   ```javascript
   config = {
-    addSourceMaps: true,
+    addSourceMaps: {} || true,
     concatCSS: true,
     plugins:{
       cleanCss: {}
@@ -59,7 +62,7 @@ Pipeline options:
 
 ## Results
 
-This pipeline returns an object. This object receives a stream with the files to minify, and you can call the _minifyCSS_ method to execute the minification. Based on the configuration provided in _config.concatCSS_, the pipeline will concatenate the files or no. If _config.addSourceMaps_ is true, the output stream will include the respectively `.map` files.
+This pipeline returns an object. This object receives a stream with the files to minify, and you can call the _minifyCSS_ method to execute the minification. Based on the configuration provided in _config.concatCSS_, the pipeline will concatenate the files or not. If _config.addSourceMaps_ is true, the output stream will include the respectively `.map` files. If _config.addSourceMaps.prefix_ is a fully qualified domain name, the sourceMap URL output will contain the specfied prefix.
 
 
 ## LICENSE
