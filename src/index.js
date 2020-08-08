@@ -9,7 +9,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var cleanCss = require('gulp-clean-css');
 
 var config = {
-  addSourceMaps: true,
+  addSourceMaps: {} || true,
   concat: true,
   concatFilename: handyman.getPackageName() + '.min.css',
   plugins: {
@@ -40,7 +40,12 @@ function pipelineFactory() {
       return gulpIf(config.concat, concat(config.concatFilename));
     })
     .pipe(function() {
-      return gulpIf(config.addSourceMaps, sourcemaps.write('.'));
+      return gulpIf(config.addSourceMaps.prefix,
+        sourcemaps.write('.', {
+          sourceMappingURLPrefix: config.addSourceMaps.prefix
+        }),
+        gulpIf(config.addSourceMaps, sourcemaps.write('.'))
+     );
     });
 
   return pipeline();
