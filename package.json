@@ -1,6 +1,6 @@
 {
   "name": "pipeline-minify-css",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Gulp pipeline to minify and optionally concatenate CSS files",
   "author": "Juan P. Osorio <jposorio@kenzan.com> (https://github.com/jpoo90)",
   "contributors": [
@@ -11,6 +11,10 @@
     {
       "name": "Chris Sharon",
       "email": "csharon@kenzan.com"
+    },
+    {
+      "name": "Davey Jacobson",
+      "email": ""
     }
   ],
   "scripts": {
