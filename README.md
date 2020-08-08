@@ -35,8 +35,8 @@ Pipeline options:
 * _config_ -> Object that contains the configuration.
 
   * __addSourceMaps:__ 
+      * __addSourceMaps.prefix:__ Set to a URL string (with `https://`) will add a URL prefix to the `sourceMap` value found inside the CSS file.
       * If set to __false__ source maps won't be generated for the compile files.
-      * If set to an object containing a __prefix__ key with a fully qualified domain name value (e.g. a CDN URL with `https`), the sourceMap URL will be set with the specified prefix.
       * By default the pipeline will generate the source maps and store them in _maps_.
 
   * __concat:__ If set to __false__ the pipeline won't concatenate the files to generate a single CSS file.
