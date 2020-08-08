@@ -35,7 +35,7 @@ Pipeline options:
 * _config_ -> Object that contains the configuration.
 
   * __addSourceMaps:__ 
-      * __addSourceMaps.prefix:__ Set to a URL string (with `https://`) will prefix to the `sourceMap` value found inside a CSS file.
+      * __addSourceMaps.prefix:__ Set to a URL string (with `https://`) to prefix the `sourceMap` value found inside a CSS file.
       * If set to __false__ source maps won't be generated for the compile files.
       * By default the pipeline will generate the source maps and store them in _maps_.
 
