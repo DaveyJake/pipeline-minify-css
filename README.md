@@ -47,8 +47,6 @@ Pipeline options:
 
       * __plugins.cleanCss:__ Minifies CSS files using the basic [clean-css](https://github.com/jakubpawlowicz/clean-css#what-is-clean-css) configuration. You can provide your own minification rules setting an object-- following [this](https://github.com/jakubpawlowicz/clean-css#how-to-use-clean-css-api) rules.
 
-  * __output:__ Where to
-
   Default:
   ```javascript
   config = {
